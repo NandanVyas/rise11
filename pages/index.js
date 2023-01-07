@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import NavBar from '../components/NavBar'
+import Booking from '../components/Booking'
 
 const Home = () => 
 {
@@ -45,6 +46,8 @@ const Home = () =>
         </label>
       </div>
     </form>
+
+    <Booking/>
   </>
   )
 }
