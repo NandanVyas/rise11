@@ -7,7 +7,7 @@ const Home = () =>
 {
   const [selectedOption, setSelectedOption] = useState('RoundTrip');
   return (
-  <div className='md:h-screen overflow-hidden'>
+  <div className='md:h-screen overflow-scroll '>
     <NavBar/>
     <form className='flex justify-center items-center  my-4 text-xs'>
     <div className="flex items-center border-b-2 px-4 pb-3 ">

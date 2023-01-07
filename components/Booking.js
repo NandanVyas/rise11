@@ -11,11 +11,12 @@ const Booking = () => {
     { name: "Palm Springs", value: "CA", code: "PSP" },
     { name: "Portland", value: "OR", code: "PDX" },
     { name: "San Francisco", value: "SF", code: "SAF" },
+    { name: "Delhi", value: "DH", code: "DEH" }
   ];
   console.log(selectedCity);
   return (
     <>
-      <form className="flex justify-center pt-10 items-center text-4xl">
+      <form className="flex justify-center pt-10 items-center text-xl md:text-4xl">
         <div className="mr-1">Book from</div>
         <select
           className=" text-purple-700 focus:outline-none font-semibold "
@@ -32,14 +33,14 @@ const Booking = () => {
       </form>
       
 
-      <form className="flex flex-wrap justify-center">
+      <form className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-start mt-5 lg:mx-52 px-3 mx-1 md:mx-4 h-auto">
         {cities.slice(0, showAllCities ? cities.length : 5).map((city) => (
           <div
             key={city.code}
-            className={"px-3 m-2 rounded-md py-6 w-[11%] border-4 " + (city.code === goToCity ? "bg-purple-500 text-white" : "bg-white text-black")}
+            className={"rounded-md py-4 md:py-6 px-2 w-[90%] border-4 my-2 " + (city.code === goToCity ? " bg-purple-500/80 text-white" : "bg-white text-black")}
             onClick={() => setGoToCity(city.code)}
           >
-            <div className={"font-bold text-purple-600"+ (city.code === goToCity ? " text-white" : " text-purple-600") }>{city.name}</div>
+            <div className={"font-bold "+ (city.code === goToCity ? " text-white " : " text-purple-600") }>{city.name}</div>
             <div className="text-xs">
               {city.value} ( {city.code} )
             </div>
@@ -47,7 +48,7 @@ const Booking = () => {
         ))}
         {!showAllCities && (
           <div
-            className="px-3 m-2 rounded-md py-6 w-[11%] border-4 font-bold text-purple-600"
+            className="px-2 rounded-md py-4 md:py-6  w-[90%] my-2 border-4 font-bold text-purple-600"
             onClick={() => setShowAllCities(true)}
           >
             All cities
