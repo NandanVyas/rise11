@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import NavBar from '../components/NavBar'
 import Booking from '../components/Booking'
+import Footer from '../components/Footer';
 
 const Home = () => 
 {
   const [selectedOption, setSelectedOption] = useState('RoundTrip');
   return (
-  <>
+  <div className='md:h-screen overflow-hidden'>
     <NavBar/>
     <form className='flex justify-center items-center  my-4 text-xs'>
     <div className="flex items-center border-b-2 px-4 pb-3 ">
@@ -48,7 +49,9 @@ const Home = () =>
     </form>
 
     <Booking/>
-  </>
+
+    <Footer/>
+  </div>
   )
 }
 
